@@ -1,0 +1,25 @@
+---
+title: "Unemployment_Rate_Data"
+author: "Kayla Lindsley"
+date: "2025-02-16"
+output: html_document
+---
+
+```{r}
+#1 Load the data
+UnemploymentRateData <- read.csv("/Users/kaylalindsley/Desktop/Junior\ Yr/Semester\ 2/Time\ Series/Assignment\ 3/unemployment_rate_data.csv", header = TRUE)
+
+#2 Data Dictionary
+Variable <- c("date", "unrate", "unrate_men", "unrate_women", "unrate_16_to_17", "unrate_18_to_19", "unrate_20_to_24", "unrate_25_to_34", "unrate_35_to_44", "unrate_45_to_54", "unrate_55_over")
+Variable_Name <- c("Date", "UnemploymentRate", "Men", "Women", "16-17", "18-19", "20-24", "25-34", "35-44", "45-54", "55=<")
+Measurement_Unit <- c("MM/DD/YYYY", "Numeric", "Numeric", "Numeric", "Numeric", "Numeric", "Numeric", "Numeric", "Numeric", "Numeric", "Numeric")
+Allowed_Values <- c("01/01/1948-12/31/2021", "0.00-100.00", "0.00-100.00", "0.00-100.00", "0.00-100.00", "0.00-100.00", "0.00-100.00", "0.00-100.00", "0.00-100.00", "0.00-100.00", "0.00-100.00")
+Description <- c("Date.", "Total unemployment rate in the US.", "Unemployment rate for men.", "Unemployment rate for women.", "Unemployment rate for people aged 16 to 17 years old.", "Unemployment rate for people aged 18 to 19 years old.", "Unemployment rate for people aged 20 to 24 years old.", "Unemployment rate for people aged 25 to 34 years old.", "Unemployment rate for people aged 35 to 44 years old.", "Unemployment rate for people aged 45 to 54 years old.", "Unemployment rate for people aged 55 years old and over.")
+US_UnemploymentRate <- data.frame(Variable,Variable_Name,Measurement_Unit,Allowed_Values, Description)
+US_UnemploymentRate
+
+#3 Collection Methodology
+"The data was collected by the US Bureau of Labor Statistics. Data was collected from FRED and USBLS and cleaned/complied in python and published through Kaggle. The data set provides monthly data and is expected to update annually."
+
+#4 Why does this data set intrigue you 
+"This data set intrigues me because I thought it would be interesting to look at just employment data and see what kinds of patterns and anomolies might be present and speculate the reasons."
